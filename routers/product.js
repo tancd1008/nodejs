@@ -1,28 +1,12 @@
 import express from "express";
+import { createProduct, deleteProduct, detailProduct,  listProduct, updateProduct } from "../controllers/products";
 
 const router = express.Router();
-const products = [
-    {id: 1, name: "Product 1"},
-    {id: 2, name: "Product 2"}
-]
-router.get("/products",(request,response)=>{
-    response.json(products)
-}),
-router.get("/products/:id",(request,response)=>{
-    const product = products.find(item => item.id === +request.params.id)
-    response.json(product)
-})
-router.post("/products",(request,response)=>{
-    products.push(request.body)
-    response.json(products);
-})
-router.delete("/products/:id",(request,response)=>{
-    const product = products.filter(item => item.id !== +request.params.id)
-    response.json(product)
-})
-router.put("/products/:id",(request,response)=>{
-    const product = products.map(item => item.id === +request.params.id ? request.body : item)
-    response.json(product)
-})
+
+router.get("/products",listProduct),
+router.get("/products/:id",detailProduct)
+router.post("/products",createProduct)
+router.delete("/products/:id",deleteProduct)
+router.put("/products/:id",updateProduct)
 
 export default router;

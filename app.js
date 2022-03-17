@@ -1,5 +1,6 @@
 // B1: Include thư viện http
 import express from "express";
+import mongoose from "mongoose";
 import homeRouter from "./routers/home";
 import productRouter from "./routers/product"
 import newRouter from "./routers/new"
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(homeRouter);
 app.use('/api',productRouter);
 app.use(newRouter)
+mongoose.connect('mongodb://localhost:27017/we16307');
 
 // B2: Khởi tạo server
 // const server = http.createServer((request, response) => {
