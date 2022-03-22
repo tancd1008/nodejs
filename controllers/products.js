@@ -45,7 +45,7 @@ export const deleteProduct = async (request,response)=>{
     // const product = products.filter(item => item.id != request.params.id)
     // response.json(product);
 }
-export const editProduct = async (request,response)=>{
+export const updateProduct = async (request,response)=>{
     try {
         const product = await Product.findOneAndUpdate({_id:request.params.id},request.body,{new:true}).exec()
         response.json(product)

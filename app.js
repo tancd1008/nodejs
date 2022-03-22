@@ -4,12 +4,14 @@ import mongoose from "mongoose";
 import homeRouter from "./routers/home";
 import productRouter from "./routers/product"
 import newRouter from "./routers/new"
+import categoryRouter from "./routers/category";
 const app = express();
 
 
 app.use(express.json());
 app.use(homeRouter);
 app.use('/api',productRouter);
+app.use('/api',categoryRouter);
 app.use(newRouter)
 mongoose.connect('mongodb://127.0.0.1:27017/we16307');
 
