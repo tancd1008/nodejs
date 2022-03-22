@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(homeRouter);
 app.use('/api',productRouter);
 app.use(newRouter)
-mongoose.connect('mongodb://localhost:27017/we16307');
+mongoose.connect('mongodb://127.0.0.1:27017/we16307');
 
 // B2: Khởi tạo server
 // const server = http.createServer((request, response) => {
