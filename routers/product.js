@@ -1,5 +1,4 @@
 import express from "express"
-import { route } from "express/lib/application";
 import { createProduct, deleteProduct, editProduct, listProduct, listProductDetail } from "../controllers/products";
 const productRouter = express.Router();
 
