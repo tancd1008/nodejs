@@ -1,8 +1,5 @@
 import Product from '../models/products'
-// const products = [
-//     {id:1,name:"Product 1"},
-//     {id:2,name:"Product 2"}
-// ]
+
 
 export const listProduct = async (request,response)=>{
     try{
