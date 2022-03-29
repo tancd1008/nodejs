@@ -6,6 +6,7 @@ import productRouter from "./routers/product"
 import newRouter from "./routers/new"
 import categoryRouter from "./routers/category";
 import cors from 'cors'
+import authRouter from "./routers/auth";
 const app = express();
 
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(homeRouter);
 app.use('/api',productRouter);
 app.use('/api',categoryRouter);
+app.use('/api',authRouter)
 app.use(newRouter)
 // Connect Database
 mongoose.connect('mongodb://127.0.0.1:27017/we16307');
