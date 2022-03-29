@@ -29,7 +29,7 @@ export const signin = async (request,response) => {
             message:"Tai khoan hoac mk sai"
         })
     }
-    if(!user.password){
+    if(!user.authenticate(password)){
         return response.status(400).json({
             message:"Tai khoan hoac mk sai"
         })
