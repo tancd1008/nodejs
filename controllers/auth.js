@@ -21,6 +21,25 @@ export const signup = async (request,response) => {
         console.log(error);
     }
 }
-export const signin = (request,response) => {
+export const signin = async (request,response) => {
+    const {email,password} = request.body
+    const user = await User.findOne({email}).exec()
+    if(!user){
+        return response.status(400).json({
+            message:"Tai khoan hoac mk sai"
+        })
+    }
+    if(!user.password){
+        return response.status(400).json({
+            message:"Tai khoan hoac mk sai"
+        })
+    }
+    response.json({
+        user:{
+            _id:user.id,
+            email:user.email,
+            name:user.name
+        }
+    })
     
 }
