@@ -5,10 +5,12 @@ import homeRouter from "./routers/home";
 import productRouter from "./routers/product"
 import newRouter from "./routers/new"
 import categoryRouter from "./routers/category";
+import cors from 'cors'
 const app = express();
 
 
 app.use(express.json());
+app.use(cors());
 app.use(homeRouter);
 app.use('/api',productRouter);
 app.use('/api',categoryRouter);
