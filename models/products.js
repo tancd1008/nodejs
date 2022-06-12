@@ -15,6 +15,10 @@ const productSchema = new mongoose.Schema({
     category:{
         type: ObjectId ,
         ref:'Category'
+    },
+    desc:{
+        type: String,
+        required: true
     }
 }) //timestamps cập nhật thời gian
 export default mongoose.model('Product', productSchema);
