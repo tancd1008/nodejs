@@ -3,9 +3,9 @@ import { createCategory, deleleCategory, listCategory, listCategoryDetail, updat
 
 const categoryRouter = express.Router();
 
-categoryRouter.get('/category',listCategory)
-categoryRouter.get('/category/:id',listCategoryDetail)
-categoryRouter.post('/category',createCategory)
-categoryRouter.delete('/category/:id', deleleCategory)
-categoryRouter.put('/category/:id',updateCategory)
+categoryRouter.get('/categories',listCategory)
+categoryRouter.get('/categories/:id',listCategoryDetail)
+categoryRouter.post('/categories',createCategory)
+categoryRouter.delete('/categories/:id', deleleCategory)
+categoryRouter.patch('/categories/:id',updateCategory)
 export default categoryRouter;

@@ -4,21 +4,25 @@ const productSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    price: {
+    status: {
         type: Number,
         required:true
-    },
-    img:{
-        type: String,
-        required: true
-    },
-    category:{
-        type: ObjectId ,
-        ref:'Category'
-    },
-    desc:{
-        type: String,
-        required: true
     }
+    // price: {
+    //     type: Number,
+    //     required:true
+    // },
+    // img:{
+    //     type: String,
+    //     required: true
+    // },
+    // category:{
+    //     type: ObjectId ,
+    //     ref:'Category'
+    // },
+    // desc:{
+    //     type: String,
+    //     required: true
+    // }
 }) //timestamps cập nhật thời gian
 export default mongoose.model('Product', productSchema);

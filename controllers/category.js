@@ -1,5 +1,5 @@
 import Category from "../models/category";
-import Product from "../models/products";
+import Book from "../models/books";
 
 export const createCategory = async (request,response) => {
     try{
@@ -20,8 +20,8 @@ export const listCategory = async (request,response) => {
 export const listCategoryDetail = async (request,response) => {
     try{
         const category = await Category.findOne({_id:request.params.id}).exec()
-        const product = await Product.find({category}).populate("category").exec()
-        response.json({category,product})
+        const book = await Book.find({category_id:request.params.id}).populate("category_id").exec()
+        response.json({category,book})
         // response.json(products)
     }catch(error){
         response.status(400).json({message:"Khong tim thay data"})

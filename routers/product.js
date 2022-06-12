@@ -10,7 +10,7 @@ productRouter.get('/products/:id',listProductDetail)
 // productRouter.post('/products/:UserId',requiredSignIn,isAuth,isAdmin, createProduct)
 productRouter.post('/products', createProduct)
 productRouter.delete('/products/:id',deleteProduct)
-productRouter.put('/products/:id', updateProduct)
+productRouter.patch('/products/:id', updateProduct)
 
 productRouter.param("UserId",userById)
 export default productRouter;

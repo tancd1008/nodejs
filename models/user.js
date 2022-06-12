@@ -14,10 +14,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    role: {
+    status: {
         type: Number,
+        required: true,
+        default: 0
+    },
+    role:{
+        type: Number,
+        required: true,
         default: 0
     }
+    
 })
 userSchema.methods = {
     authenticate(password){
